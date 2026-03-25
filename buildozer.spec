@@ -6,19 +6,19 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,wav
 version = 1.0
 
-# Requisitos limpios (sacamos pygame por ahora para que no pese)
-requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow
+# Solo lo básico para que arranque
+requirements = python3,kivy==2.3.0,kivymd==1.2.0
 
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
 
-# Ajustes de estabilidad
+# Versiones fijas que sabemos que funcionan rápido
 android.api = 31
 android.minapi = 21
 android.ndk = 25b
 android.accept_sdk_license = True
 android.archs = arm64-v8a
 
-# Para ver el error exacto si falla
-log_level = 2
+# Bajamos el nivel de log para que no gaste tiempo escribiendo de más
+log_level = 1
