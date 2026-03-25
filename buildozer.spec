@@ -6,18 +6,22 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,wav
 version = 1.0
 
-# Requisitos en ingles (muy importante)
+# Requisitos bien declarados
 requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow,requests,urllib3,pygame
 
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
 
-# Icono y Pantalla de Carga
+# Iconos
 icon.filename = logo.png
 presplash.filename = logo.png
 
-# Ajustes para GitHub Actions
+# ESTO ES LO QUE ARREGLA EL ERROR DE LOS 8 MINUTOS:
 android.accept_sdk_license = True
-android.archs = arm64-v8a, armeabi-v7a
+# Dejamos solo una arquitectura para que sea más rápido y no falle por espacio
+android.archs = arm64-v8a
 android.allow_backup = True
+
+# Nivel de detalle para ver el error si vuelve a fallar
+log_level = 2
