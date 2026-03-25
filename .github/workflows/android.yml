@@ -11,7 +11,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
+        # Volvemos a la oficial pero con una versión estable
+        uses: kivy/buildozer-action@v1
         with:
           buildozer_version: stable
-          # Sacamos la línea de python_version que es la que tiró el aviso
+          python_version: 3.12
