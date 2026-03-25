@@ -11,8 +11,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        # Esta es la ruta que NO falla:
-        uses: ArtemSBulgakov/buildozer-action@v1.6.1
+        # Esta versión es la oficial y GitHub la reconoce sí o sí:
+        uses: ArtemSBulgakov/buildozer-action@v1
         with:
           buildozer_version: stable
           python_version: 3.12
