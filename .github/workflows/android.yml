@@ -11,7 +11,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: kivy/buildozer-action@v1.2.4
+        # Esta es la ruta que NO falla:
+        uses: ArtemSBulgakov/buildozer-action@v1.6.1
         with:
           buildozer_version: stable
           python_version: 3.12
