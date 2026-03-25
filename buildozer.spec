@@ -1,27 +1,30 @@
 [app]
-title = SER-TEC
+title = SER TEC
 package.name = sertecapp
 package.domain = org.esteban
 source.dir = .
 source.include_exts = py,png,jpg,kv,wav
 version = 1.0
 
-# Requisitos bien declarados
-requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow,requests,urllib3,pygame
+# Reducimos los requisitos al mínimo necesario para que no pese tanto
+requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow,pygame
 
 orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET
 
-# Iconos
 icon.filename = logo.png
 presplash.filename = logo.png
 
-# ESTO ES LO QUE ARREGLA EL ERROR DE LOS 8 MINUTOS:
+# CONFIGURACIÓN ANTIFALLO
 android.accept_sdk_license = True
-# Dejamos solo una arquitectura para que sea más rápido y no falle por espacio
-android.archs = arm64-v8a
-android.allow_backup = True
+android.api = 33
+android.minapi = 21
+android.ndk = 25b
+android.skip_update = False
 
-# Nivel de detalle para ver el error si vuelve a fallar
+# Solo una arquitectura (la más liviana)
+android.archs = arm64-v8a
+
+# Esto evita que se quede "mudo" y corten la conexión
 log_level = 2
